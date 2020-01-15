@@ -1,4 +1,10 @@
 <h1>Create a new tadpole for <%= @frog.name %></h1>
+<%= form_for @tadpole do |f|
+    <%= f.text_field :name %>
+    <%= f.text_field :color %>
+    <%= f.submit "Create New Tadpole" %>
+<% end %> 
+
 
 <%= render 'form' %>
 
