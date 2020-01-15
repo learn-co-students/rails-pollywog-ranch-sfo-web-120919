@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 20140922151507) do
 
   create_table "frogs", force: :cascade do |t|
-    t.string  "name"
     t.string  "color"
+    t.string  "name"
     t.integer "pond_id"
+    t.index ["pond_id"], name: "index_frogs_on_pond_id"
   end
 
   create_table "ponds", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140922151507) do
     t.string  "name"
     t.string  "color"
     t.integer "frog_id"
+    t.index ["frog_id"], name: "index_tadpoles_on_frog_id"
   end
 
 end
